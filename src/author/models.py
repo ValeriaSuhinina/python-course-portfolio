@@ -1,7 +1,6 @@
 ﻿"""
 Модели для приложения "Автор".
 """
-from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
 from django.contrib import admin
@@ -14,9 +13,17 @@ class Author(TimeStampMixin):
     Модель для хранения данных об авторе.
     """
 
-    resume_url = models.URLField(help_text="Ссылка на резюме", verbose_name="Резюме",)
-    github_url = models.URLField(help_text="Ссылка на GitHub", verbose_name="GitHub",)
-    email = models.EmailField(verbose_name="Электронная почта",)
+    resume_url = models.URLField(
+        help_text="Ссылка на резюме",
+        verbose_name="Резюме",
+    )
+    github_url = models.URLField(
+        help_text="Ссылка на GitHub",
+        verbose_name="GitHub",
+    )
+    email = models.EmailField(
+        verbose_name="Электронная почта",
+    )
 
     class Meta:
         verbose_name_plural = "Информация об авторе"
@@ -41,6 +48,3 @@ class AuthorAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     )
-
-
-

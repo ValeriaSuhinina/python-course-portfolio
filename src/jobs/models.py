@@ -23,11 +23,12 @@ class Job(TimeStampMixin):
         verbose_name="Описание",
         help_text="Краткое описание выполненной работы",
     )
-    
+
     detailed_description = RichTextUploadingField(
-        verbose_name="Подробное описание работы", 
+        verbose_name="Подробное описание работы",
         help_text="Подробное описание выполненной работы",
-        default='Описание работы')
+        default="Описание работы",
+    )
 
     def summary(self) -> str:
         """
